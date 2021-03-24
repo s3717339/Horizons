@@ -18,9 +18,9 @@
       body {
         font-family: "Dosis", sans-serif;
         margin: 2em;
-        background-color: #000;
+        background-color: #028;
         color: #FFF;
-        font-size: 1.2em;
+        font-size: 2em;
       }
       h1 {
         color: #FFF;
@@ -37,12 +37,12 @@
     </style>
   </head>
   <body>
-    <h1>We walk to you</h1>
+    <h1>Drink</h1>
     <div id="poem"></div>
     <script>
       // set up the lists of words
       const subjects = "you,I,we,they".split(","),
-        verbs = "drink,laugh,fight,stumble,fall,meander".split(","),
+        verbs = "drink,rant,stumble,fall,meander".split(","),
         objects = "me,you,her,him,them".split(",");
       // set up the counter
       let counter = 0;
@@ -63,7 +63,7 @@
           getRandomFromList(subjects) +
           " " +
           getRandomFromList(verbs) +
-          " to " +
+          " with " +
           getRandomFromList(objects);
         const lineText = document.createTextNode(text);
         line.appendChild(lineText);
