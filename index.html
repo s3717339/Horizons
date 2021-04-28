@@ -12,20 +12,24 @@
     <style></style>
   </head>
   <body>
-    <h1>Hello.</h1>
+    <h1>again.</h1>
     <p id="paragraph-1">
-      This is a paragraph.
+      why
     </p>
     <p id="paragraph-2">
-      This is a another one.
+    how
+    </p>
+    <p id="paragraph-3">
+    when
     </p>
     <button id="button-1">
-      Button
+      but then
     </button>
     <!-- script -->
     <script>
       const lines = "to go out, and have fun, to do stuff, to go home".split(",");
       const linesTwo = "to stay in, and be bad, to do nothing, to go away".split(",");
+      const linesThree = "the next time, all over again, in due time, but not at all".split(",");
       const button = document.getElementById("button-1");
 
       function getRandomFromList(list) {
@@ -34,8 +38,10 @@
       function changeText() {
         paragraph = document.getElementById("paragraph-1");
         paragraphTwo = document.getElementById("paragraph-2");
+        paragraphThree = document.getElementById("paragraph-3");
         paragraph.innerText = getRandomFromList(lines);
         paragraphTwo.innerText = getRandomFromList(lines);
+        paragraphThree.innerText = getRandomFromList(lines);
       }
       button.addEventListener("click", changeText);
     </script>
