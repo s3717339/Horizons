@@ -4,100 +4,35 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!-- custom font -->
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 
-    <title>drink</title>
+    <title>Base exercise page</title>
 
+    <meta name="description" content="A simple exercise template." />
     <!-- styles -->
-    <style>
-      body {
-        font-family: 'Caveat', cursive;
-        margin: 2em;
-        background-color: #009;
-        color: #FFF;
-        font-size: 1.5em;
-      }
-      h1 {
-        color: #FFF;
-      }
-      #poem > div {
-        height: 2.0em;
-      }
-      .indent {
-        padding-left: 1em;
-      }
-      .turtle {
-        color: green;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <h1>Drink</h1>
-    <div id="poem"></div>
+    <h1>Updating HTML Content</h1>
+    <p id="paragraph-1">
+      This is a paragraph.
+    </p>
+    <button id="button-1">
+      Button
+    </button>
+    <!-- script -->
     <script>
-      // set up the lists of words
-      const subjects = "you,I,we,they".split(","),
-        verbs = "drink,rant,stumble,fall,meander".split(","),
-        objects = "me,you,her,him,them".split(",");
-      // set up the counter
-      let counter = 0;
+      const lines = "this is how, or is this how, or maybe how, and any how".split(",");
+      const button = document.getElementById("button-1");
 
-      // a function to pull a random item from a list
       function getRandomFromList(list) {
         return list[Math.floor(Math.random() * list.length)];
       }
-      // add a line to the poem constructed from the lists of words
-      function addLine(indent = false) {
-        // create the line
-        const line = document.createElement("div");
-        if (indent === true) {
-          // indent is true so add an indent class
-          line.classList.add("indent");
-        }
-        const text =
-          getRandomFromList(subjects) +
-          " " +
-          getRandomFromList(verbs) +
-          " with " +
-          getRandomFromList(objects);
-        const lineText = document.createTextNode(text);
-        line.appendChild(lineText);
-        // get the poem
-        const poem = document.getElementById("poem");
-        poem.appendChild(line);
+      function changeText() {
+        paragraph = document.getElementById("paragraph-1");
+        paragraph.innerText = getRandomFromList(lines);
       }
-      // add a blank line to the poem
-      function addBlankLine() {
-        const line = document.createElement("div");
-        const poem = document.getElementById("poem");
-        poem.appendChild(line);
-      }
-      // remove the first line from the poem
-      function removeFirstLine() {
-        const poem = document.getElementById("poem");
-        poem.removeChild(poem.childNodes[0]);
-      }
-      // implement the rules of the poem
-      function processPoem() {
-        counter++;
-        if (counter % 5 === 0) {
-          addBlankLine();
-        } else if (counter % 5 === 2 || counter % 5 === 4) {
-          // if the second or fourth line add the line with an indent
-          addLine(true);
-        } else {
-          addLine();
-        }
-        if (counter > 15) {
-          removeFirstLine();
-        }
-      }
-      window.setInterval(processPoem, 1000);
+      button.addEventListener("click", changeText);
     </script>
-
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>

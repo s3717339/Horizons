@@ -1,11 +1,3 @@
-A simple digital poem
-=====================
+# Empty page of exercises
 
-A simple digital poem that builds each line from three lists created as an example for the Horizons Digital Writing lab.
-
-
-
-Made on [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
+An empty webpage for HTML/CSS/JavaScript exercises.
